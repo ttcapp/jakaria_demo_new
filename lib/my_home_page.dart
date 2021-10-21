@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jakaria_demo/second_page.dart';
+import 'package:jakaria_demo/utills/all_colors.dart';
+import 'package:jakaria_demo/utills/all_strings.dart';
 String imgSrcAvatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ErYG1XvLfC20RitfecW2b_1q2WYwTA1t9Q&usqp=CAU";
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -17,7 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Jakaria Molla"),
+        backgroundColor: AllColors.appBarClr,
+        title: Text(AllStrings.jakariaMolla),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -57,37 +60,37 @@ class _MyHomePageState extends State<MyHomePage> {
 
                             Column(
                              children: [
-                               Text("3,405",
+                               Text(AllStrings.text3405,
                                style: TextStyle(
                                  color: Colors.black,
                                  fontSize: 20,
                                  fontWeight: FontWeight.bold,
                                ),),
-                               Text("Posts"),
+                               Text(AllStrings.textPosts),
                              ],
                            ),
                             Spacer(),
                             Column(
                               children: [
-                                Text("6.5k",
+                                Text(AllStrings.text65k,
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                   ),),
-                                Text("Flowers"),
+                                Text(AllStrings.textFlowers),
                               ],
                             ),
                             Spacer(),
                             Column(
                               children: [
-                                Text("242",
+                                Text(AllStrings.text242,
                                   style: TextStyle(
                                     color: Colors.red,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                   ),),
-                                Text("Flowing"),
+                                Text(AllStrings.textFlowers),
                               ],
                             ),
                             Spacer(),
@@ -102,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Padding(
                                   padding: const EdgeInsets.only(
                                       top: 5,bottom: 5,left: 30,right: 30),
-                                  child: Text("Message"),
+                                  child: Text(AllStrings.textMessage),
                                 ),
                                 decoration: BoxDecoration(
                                   border: Border.all(
@@ -142,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder:
                 (context)=>SecondPage()));
                },
-               child: Text("Go To Next Page")
+               child: Text(AllStrings.textGoToNextPage)
            )
           ],
         ),
