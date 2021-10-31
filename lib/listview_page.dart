@@ -12,7 +12,7 @@ List<String> stdName=[
   "Jashim",
   "Bishnu",
   "Imran",
-  "Alamain"
+  "Alamin"
 ];
 class _listviewPageState extends State<listviewPage> {
   @override

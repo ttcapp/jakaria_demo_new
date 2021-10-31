@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jakaria_demo/listview_page.dart';
+import 'package:jakaria_demo/log_in.dart';
 import 'package:jakaria_demo/second_page.dart';
 import 'package:jakaria_demo/third_page.dart';
 import 'package:jakaria_demo/utills/all_colors.dart';
@@ -42,7 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         child: Column(
           children: [
-
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>logInPage()));
+                },
+                child: Text("LOG IN")),
             ElevatedButton(
                 onPressed: (){
                 Navigator.push(context,
