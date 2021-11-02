@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jakaria_demo/log_in.dart';
 import 'package:jakaria_demo/my_home_page.dart';
 import 'package:jakaria_demo/second_page.dart';
 import 'package:jakaria_demo/third_page.dart';
@@ -47,7 +48,7 @@ final navigatorkey= GlobalKey<NavigatorState>();
               icon: Icons.settings,
               onTap: (){}),
         ],
-        child: MyHomePage(),
+        child: logInPage(),
       ),
     );
   }

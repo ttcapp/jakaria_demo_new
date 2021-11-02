@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jakaria_demo/my_home_page.dart';
 import 'package:jakaria_demo/utills/all_colors.dart';
 class logInPage extends StatefulWidget {
   const logInPage({Key? key}) : super(key: key);
@@ -7,6 +8,11 @@ class logInPage extends StatefulWidget {
   _logInPageState createState() => _logInPageState();
 }
 // for global variables
+String _email= "afcking2017@gmail.com";
+String _password= "555777";
+TextEditingController emailCont= TextEditingController();
+TextEditingController passlCont= TextEditingController();
+
 final _formkey= GlobalKey<FormState>();
 
 
@@ -19,7 +25,7 @@ class _logInPageState extends State<logInPage> {
       body: Container(
         height: h,
         width: w,
-        color: Colors.lime,
+        color: Colors.green,
         child: Padding(
           padding: EdgeInsets.only(
               top:  h*0.09,
@@ -35,6 +41,15 @@ class _logInPageState extends State<logInPage> {
                   height: 18,
                 ),
                 TextFormField(
+                  controller: emailCont,
+                  validator: (text){
+                    if(text == null || text.isEmpty){
+                      return "The Field is Empty";
+                    }
+                    else if(text != _email){
+                      return "Invalid email";
+                    }
+                  },
                   autofocus: true,
                   decoration: InputDecoration(
                     labelText: "Email",
@@ -54,6 +69,15 @@ class _logInPageState extends State<logInPage> {
                 ),
                 SizedBox(height: 20,),
                 TextFormField(
+                  controller: passlCont,
+                  validator: (text){
+                    if(text == null || text.isEmpty){
+                      return "The Field is Empty";
+                    }
+                    else if(text != _password){
+                      return "Invalid Password";
+                    }
+                  },
                   obscureText: true,
                   autofocus: true,
                   decoration: InputDecoration(
@@ -79,7 +103,12 @@ class _logInPageState extends State<logInPage> {
                     primary: AllColors.appThemeColor
                   ),
                     onPressed: (){
-
+                    emailCont.text;
+                    if(_formkey.currentState!.validate()){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder:(context)
+                      =>MyHomePage()));
+                    }
                     },
                     child: Container(
                       width: 100,
