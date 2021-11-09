@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:jakaria_demo/model/student_model.dart';
 import 'package:jakaria_demo/std_details.dart';
 class listviewPage extends StatefulWidget {
   const listviewPage({Key? key}) : super(key: key);
@@ -42,6 +43,19 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
 ];
+
+StudentDetails std1= StudentDetails ("Masum", "1001", "0177795689","Gobra", "35");
+StudentDetails std2= StudentDetails ("Masud", "1002", "01697963339","Mohammadpara", "35");
+StudentDetails std3= StudentDetails ("Jakaria", "1003", "01777963339","Ghonapara", "35");
+StudentDetails std4= StudentDetails ("Jashim", "1004", "01775698339","TTC", "35");
+StudentDetails std5= StudentDetails ("Bishnu", "1005", "01623663339","PTI", "35");
+StudentDetails std6= StudentDetails ("Imran", "1006", "01769363339","AFC", "35");
+StudentDetails std7= StudentDetails ("Al Amin", "1007", "01952963339","Tungipara", "35");
+
+List<StudentDetails> stdDetailsList=[
+  std1, std2, std3, std4, std5, std6, std7
+];
+
 class _listviewPageState extends State<listviewPage> {
   @override
   Widget build(BuildContext context) {
@@ -89,7 +103,8 @@ class _listviewPageState extends State<listviewPage> {
                                 onPressed: (){
                                   Navigator.push(context,
                                       MaterialPageRoute(builder:
-                                          (context)=>stdDetailsPage( text: stdDetails[index],
+                                          (context)=>
+                                              stdDetailsPage(stdobj: stdDetailsList[index],
                                         img: stdImg[index],)));
                                 },
                                 child: Text(stdName[index],
@@ -105,8 +120,6 @@ class _listviewPageState extends State<listviewPage> {
                 ),
               ),
             ),
-
-
 
           );
         },

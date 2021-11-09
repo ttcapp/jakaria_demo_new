@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:jakaria_demo/model/student_model.dart';
 class stdDetailsPage extends StatefulWidget {
-  String text;
+  StudentDetails stdobj;
   String img;
-  stdDetailsPage({Key? key, required this.text, required this.img}) :
+  stdDetailsPage({Key? key, required this.stdobj,
+    required this.img}) :
         super(key: key);
 
   @override
@@ -22,10 +24,38 @@ class _stdDetailsPageState extends State<stdDetailsPage> {
           Image.asset(widget.img),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(widget.text,
+            child: Text(widget.stdobj.name,
             style: TextStyle(
               color: Colors.green, fontSize: 30
             ),),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(widget.stdobj.id,
+              style: TextStyle(
+                  color: Colors.green, fontSize: 30
+              ),),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(widget.stdobj.number,
+              style: TextStyle(
+                  color: Colors.green, fontSize: 30
+              ),),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(widget.stdobj.address,
+              style: TextStyle(
+                  color: Colors.green, fontSize: 30
+              ),),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(widget.stdobj.age,
+              style: TextStyle(
+                  color: Colors.green, fontSize: 30
+              ),),
           )
         ],
       ),
